@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator & Unit Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>Utilities</h1>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tip">Tip Calculator</button>
+      <button class="tab-btn" data-tab="unit">Unit Converter</button>
+    </div>
+
+    <!-- Tip Calculator -->
+    <section id="tab-tip" class="tab-panel active">
+      <div class="field">
+        <label for="bill">Bill amount</label>
+        <input type="number" id="bill" min="0" step="0.01" placeholder="0.00" />
+      </div>
+      <div class="field">
+        <label for="tip">Tip (%)</label>
+        <input type="number" id="tip" min="0" step="1" placeholder="15" />
+      </div>
+      <div class="field">
+        <label for="people">Split between (people)</label>
+        <input type="number" id="people" min="1" step="1" value="1" />
+      </div>
+      <p id="tip-error" class="error"></p>
+      <div class="result-box">
+        <p>Per person: <strong id="tip-result">—</strong></p>
+      </div>
+    </section>
+
+    <!-- Unit Converter -->
+    <section id="tab-unit" class="tab-panel">
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="length">Length</option>
+          <option value="weight">Weight</option>
+          <option value="temperature">Temperature</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="from-unit">From</label>
+        <select id="from-unit"></select>
+      </div>
+      <div class="field">
+        <label for="to-unit">To</label>
+        <select id="to-unit"></select>
+      </div>
+      <div class="field">
+        <label for="convert-value">Value</label>
+        <input type="number" id="convert-value" step="any" placeholder="Enter value" />
+      </div>
+      <p id="unit-error" class="error"></p>
+      <div class="result-box">
+        <p>Result: <strong id="unit-result">—</strong></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
